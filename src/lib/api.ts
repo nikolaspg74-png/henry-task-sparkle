@@ -1,5 +1,5 @@
 const API_BASE_URL = import.meta.env.PROD 
-  ? 'https://6fd3fe4c970cfb.lhr.life'  // Produção: usa o tunnel diretamente
+  ? 'https://a496dfd5f0d29b.lhr.life'  // Produção: usa o tunnel diretamente
   : '/api';      // Será redirecionado pelo proxy para http://localhost:3001
 
 export interface Tarefa {
