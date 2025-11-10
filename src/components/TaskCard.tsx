@@ -20,26 +20,26 @@ export const TaskCard = ({ task, onCorrect, onWrong, disabled = false }: TaskCar
         {task.descricao && (
           <p className="text-muted-foreground">{task.descricao}</p>
         )}
-        <div className="flex gap-3">
-          <Button
-            onClick={onCorrect}
-            disabled={disabled}
-            className="flex-1 bg-gradient-success hover:scale-105 transition-transform text-lg py-6 rounded-2xl"
-            size="lg"
-          >
-            <Check className="w-6 h-6 mr-2" />
-            Acertei! +1
-          </Button>
-          <Button
-            onClick={onWrong}
-            disabled={disabled}
-            className="flex-1 bg-gradient-to-br from-error to-error/80 hover:from-error/90 hover:to-error/70 hover:scale-105 transition-transform text-lg py-6 rounded-2xl"
-            size="lg"
-          >
-            <X className="w-6 h-6 mr-2" />
-            Errei -2
-          </Button>
-        </div>
+<div className="flex flex-col xs:flex-row gap-2 sm:gap-3 w-full">
+  <Button
+    onClick={onCorrect}
+    disabled={disabled}
+    className="flex-1 bg-gradient-success hover:scale-105 active:scale-95 transition-transform text-sm xs:text-base sm:text-lg py-3 xs:py-4 sm:py-6 rounded-lg xs:rounded-xl sm:rounded-2xl"
+    size="lg"
+  >
+    <Check className="w-4 h-4 xs:w-5 xs:h-5 sm:w-6 sm:h-6 mr-1 xs:mr-2" />
+    Acertei! +1
+  </Button>
+  <Button
+    onClick={onWrong}
+    disabled={disabled}
+    className="flex-1 bg-gradient-to-br from-error to-error/80 hover:from-error/90 hover:to-error/70 hover:scale-105 active:scale-95 transition-transform text-sm xs:text-base sm:text-lg py-3 xs:py-4 sm:py-6 rounded-lg xs:rounded-xl sm:rounded-2xl"
+    size="lg"
+  >
+    <X className="w-4 h-4 xs:w-5 xs:h-5 sm:w-6 sm:h-6 mr-1 xs:mr-2" />
+    Errei -2
+  </Button>
+</div>
       </div>
     </Card>
   );
