@@ -4,7 +4,7 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 // eslint-disable-next-line no-var
-var targetUrl = "http://localhost:3001" || 'https://11c2ea6ea53505.lhr.life';
+var targetUrl = "http://localhost:3001" || 'https://3f334a3101ee87.lhr.life';
 
 export default defineConfig(({ mode }) => ({
   server: {

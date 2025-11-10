@@ -1,5 +1,6 @@
-// api.ts
-const API_BASE_URL = '/api'; // Será redirecionado pelo proxy para http://localhost:3001
+const API_BASE_URL = import.meta.env.PROD 
+  ? 'https://3f334a3101ee87.lhr.life'  // Produção: usa o tunnel diretamente
+  : '/api';      // Será redirecionado pelo proxy para http://localhost:3001
 
 export interface Tarefa {
   id: number;
