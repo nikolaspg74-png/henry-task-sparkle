@@ -3,13 +3,16 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
 
+// eslint-disable-next-line no-var
+var targetUrl = "http://localhost:3001" || 'https://11c2ea6ea53505.lhr.life';
+
 export default defineConfig(({ mode }) => ({
   server: {
     host: "0.0.0.0",
     port: 8080,
     proxy: {
       '/api': {
-        target: 'https://11c2ea6ea53505.lhr.life',
+        target: targetUrl,
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ''),
         secure: false,
