@@ -1,5 +1,5 @@
 const API_BASE_URL = import.meta.env.PROD 
-  ? 'https://3b3e5858e1a1f8.lhr.life'  // Produção: usa o tunnel diretamente
+  ? 'https://points-children.instatunnel.my'  // Produção: usa o tunnel diretamente
   : '/api';      // Será redirecionado pelo proxy para http://localhost:3001
 
 export interface Tarefa {
