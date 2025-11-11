@@ -1,6 +1,10 @@
-const API_BASE_URL = import.meta.env.PROD 
+// const API_BASE_URL = import.meta.env.PROD 
+//   ? 'https://points-children.instatunnel.my'  // Produção: usa o tunnel diretamente
+//   : '/api'; 
+  
+  const API_BASE_URL = import.meta.env.PROD 
   ? 'https://points-children.instatunnel.my'  // Produção: usa o tunnel diretamente
-  : '/api';      // Será redirecionado pelo proxy para http://localhost:3001
+  : '/api';  // Será redirecionado pelo proxy para http://localhost:3001
 
 export interface Tarefa {
   id: number;
