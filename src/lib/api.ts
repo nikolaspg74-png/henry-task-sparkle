@@ -1,3 +1,4 @@
+import { Recompensa } from './api';
 // const API_BASE_URL = import.meta.env.PROD 
 //   ? 'https://points-children.instatunnel.my'  // Produção: usa o tunnel diretamente
 //   : '/api'; 
@@ -23,6 +24,13 @@ export interface Pontuacao {
   total: number;
 }
 
+export interface Resgate {
+  id: number;
+  nome?: string; // opcional pois pode vir aninhado
+  custo?: number; // opcional pois pode vir aninhado
+  data_resgate?: string;
+}
+
 export const api = {
   async getTarefas(): Promise<Tarefa[]> {
     const response = await fetch(`${API_BASE_URL}/tarefas`);
@@ -40,6 +48,25 @@ export const api = {
     const response = await fetch(`${API_BASE_URL}/pontuacao`);
     if (!response.ok) throw new Error('Erro ao buscar pontuação');
     return response.json();
+  },
+async getResgate(): Promise<Resgate | null> {
+    try {
+      const response = await fetch(`${API_BASE_URL}/premios-resgatados`);
+      if (!response.ok) throw new Error('Erro ao buscar resgates');
+      
+      const data = await response.json();
+      
+      // Se for um array, pega o primeiro item (último resgate)
+      if (Array.isArray(data)) {
+        return data.length > 0 ? data[0] : null;
+      }
+      
+      // Se for um objeto único, retorna diretamente
+      return data;
+    } catch (error) {
+      console.error('Erro ao buscar resgates:', error);
+      return null;
+    }
   },
 
   async pontuar(valor: number): Promise<Pontuacao> {

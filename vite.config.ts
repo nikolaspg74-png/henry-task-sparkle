@@ -3,8 +3,8 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
 
-// eslint-disable-next-line no-var
-var targetUrl = "http://localhost:3000" || 'https://points-children.instatunnel.my';
+
+const targetUrl = "http://localhost:3000" || 'https://points-children.instatunnel.my';
 
 export default defineConfig(({ mode }) => ({
   server: {
